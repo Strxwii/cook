@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Lets Cook</title>
+    <script src="js/cook.js" defer></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1,
+        p,
+        a {
+            color: white;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 3.1vh;
+        }
+
+        p {
+            font-size: 1.5vh;
+            color: black;
+            text-align: center;
+        }
+
+        #container{
+            height: 80vh;
+            width:100vh;
+            border:  1px solid white;
+        }
+        #title{
+            height: 10vh;
+            line-height: 10vh;
+            width:100vh;
+            border-bottom: 1px solid white;
+        }
+        #content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+            width:100vh;
+        }
+        #colour-menu{
+            width: 10vh;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #drawing-area{
+            width: 90vh;
+            height: 60vh;
+            border-left: 1px solid white;
+            border-bottom: 1px solid white;
+        }
+        #arrow-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100vh;
+            height: 10vh;
+        }
+        .button{
+            width:8vh;
+            height:8vh;
+            background-color: paleturquoise;
+            margin: 1.5vh;
+            line-height: 7vh;
+        }
+        .button:hover{
+            outline: 5px solid paleturquoise;
+        }
+        .arrowUI{
+            width:64px;
+            height:64px;
+            background-color: darkgray;
+            margin: 1.5vh;
+            /* line-height: 7vh; */
+        }
+        #arrow-up{
+            background-image: url("images/arrowUp.png");
+            background-repeat: no-repeat;
+        }
+        #arrow-right{
+            background-image: url("images/arrowRight.png");
+            background-repeat: no-repeat;
+        }
+        #arrow-left{
+            background-image: url("images/arrowLeft.png");
+            background-repeat: no-repeat;
+        }
+        #arrow-down{
+            background-image: url("images/arrowDown.png");
+            background-repeat: no-repeat;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="title">
+            <h1>Let's Cook</h1>
+        </div>
+        <div id="content">
+            <div id="colour-menu">
+                <div class="recipeselect button"  data-tool="smoothie">
+                    <p>Smoothie</p>
+                </div>
+                <div class="recipeselect button" id="steak">
+                    <p>Steak</p>
+                </div>
+                <div class="recipeselect button" id="pie">
+                    <p>Pie</p>
+                </div>            
+            </div>
+            <div id="drawing-area">
+            </div>
+        </div>
+        <div id="arrow-menu">
+            <div class="arrowUI" id="arrow-left"></div>
+            <div class="arrowUI" id="arrow-up"></div>
+            <div class="arrowUI" id="arrow-down"></div>
+            <div class="arrowUI" id="arrow-right"></div>
+        </div>   
+    </div>
+
+</body>
+
+</html>
