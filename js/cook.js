@@ -6,43 +6,44 @@ for (var i = 0; i < foodButtons.length; i++){
 
 //selecting random arrow for user to input
 
-
-var number = 0;
-while (number < 5){
-    number = number + 1
-    console.log(number)
-    random_arrow();
-};
-
+function numbercount(){
+    var number = 0;
+    while (number < 4){
+        number = number + 1
+        console.log(number)
+        random_arrow();
+    }
+}
 
 function random_arrow(){
     var arrows = Math.floor((Math.random() * 4) + 1); // 1 = up arrow, 2 = down arrow, 3 = left arrow, 4 = right arrow
     if (arrows == '1'){
         console.log('up arrow')
-        //if (upArrow == true)
-            //random_arrow()
+        if (upArrow == true)
+            numbercount();
     }
     if (arrows == '2'){
         console.log('down arrow')
-        //if (downArrow == true)
-            //random_arrow()
+        if (downArrow == true)
+            numbercount();
     }
     if (arrows == '3'){
         console.log('left arrow')
-        //if (leftArrow == true)
-            //random_arrow()
+        if (leftArrow == true)
+            numbercount();
     }
     if (arrows == '4'){
         console.log('right arrow')
-        //if (rightArrow == true)
-            //random_arrow()
+        if (rightArrow == true)
+            numbercount();
     }
 }
+
 
 //key listeners
 var arrow = {}
 arrowInput();
-arrow.keyCodes(40, 38, 37, 39);//
+arrow.keyCodes(40, 38, 37, 39, 32);//
 addInputListeners();
 
 function addInputListeners(){
@@ -51,15 +52,12 @@ function addInputListeners(){
 }
 
 function keyDownHandler(event){
-    console.log(event);
     if (event.keyCode == arrow.leftKey){
         arrow.leftArrow = true
-        console.log('leftarrow pressed')
         //left arrow
     }
     if (event.keyCode == arrow.rightKey){
         arrow.rightArrow = true
-        console.log('rightarrow pressed')
 
         //right arrow
     }
@@ -70,6 +68,10 @@ function keyDownHandler(event){
     if (event.keyCode == arrow.downKey){
         arrow.downArrow = true
         //down arrow
+    }
+    if (event.keyCode == arrow.spaceKey){
+        arrow.spaceBar = true
+        random_arrow();
     }
 }
 
@@ -90,28 +92,19 @@ function keyUpHandler(event){
         arrow.downArrow = false
         //down arrow
     }
+    if (event.keyCode == arrow.spaceKey){
+        arrow.spaceBar = false
+    }
+
 }
 
 function arrowInput(){
-    arrow.keyCodes = function(D, U, L, R){
+    arrow.keyCodes = function(D, U, L, R, S){
         this.leftKey = L;
         this.rightKey = R;
         this.upKey = U;
         this.downKey = D;
-    }
-    arrow.updateKey = function(){
-        /*if(){
-
-        }
-        if(){
-
-        }
-        if(){
-
-        }
-        if(){
-            
-        }*/
+        this.spaceKey = S;
     }
 }
 
